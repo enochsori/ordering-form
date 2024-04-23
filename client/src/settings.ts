@@ -1,9 +1,4 @@
-import {
-  ErrorMessage,
-  ImageFiles,
-  InitialState,
-  ItemOptions,
-} from './types/type';
+import { ErrorMessage, FormData, ImageFiles, ItemOptions } from './types/type';
 
 export const itemOptions: ItemOptions[] = [
   { value: 'undefined', label: 'Pick an item' },
@@ -27,9 +22,9 @@ export const imageFiles: ImageFiles = {
   bottle: 'bottle.png',
 };
 
-export const initialState: InitialState = {
-  order: 'undefined',
-  size: 'undefined',
+export const initialState: FormData = {
+  order: undefined,
+  size: undefined,
   firstName: '',
   lastName: '',
   email: '',

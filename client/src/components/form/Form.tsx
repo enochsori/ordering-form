@@ -3,6 +3,15 @@ import Input from './Input';
 import Button from './Button';
 
 import { itemOptions, sizeOptions } from '../../settings';
+import { Disabled, FormData, SubStatus } from '../../types/type';
+
+type FormProps = {
+  formData: FormData;
+  disabled: Disabled;
+  subStatus: SubStatus;
+  handleChange: (value: string, name: string) => void;
+  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+};
 
 export default function Form({
   formData,
@@ -10,7 +19,7 @@ export default function Form({
   handleClick,
   disabled,
   subStatus,
-}) {
+}: FormProps) {
   return (
     <form className='px-[20px]'>
       <div>
@@ -32,18 +41,18 @@ export default function Form({
         )}
       </div>
 
-      <div className='mx-4'>
-        <h1>Order Form</h1>
+      <div className='mb-4'>
+        <h1 className='font-bold'>Order Form</h1>
         <h2>Provide your information</h2>
         <div className='flex justify-between w-full'>
           <Input
-            name='givenName'
+            name='firstName'
             type='text'
             placeholder='First name'
             handleChange={handleChange}
           />
           <Input
-            name='surname'
+            name='lastName'
             type='text'
             placeholder='Last name'
             handleChange={handleChange}

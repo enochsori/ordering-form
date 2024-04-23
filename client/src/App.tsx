@@ -1,31 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import { errorMessages, initialState } from './settings';
-import { Disabled, ErrorMessage, InitialState, SubStatus } from './types/type';
+import { Disabled, FormData, SubStatus } from './types/type';
 import ProductImg from './components/ProductImg';
 import ErrorMsg from './components/ErrorMsg';
 import Form from './components/form/Form';
 import ConfirmationsMsg from './components/ConfirmationsMsg';
 
 function App() {
-  const [formData, setFormData] = useState<InitialState>(initialState);
+  const [formData, setFormData] = useState<FormData>(initialState);
   const [disabled, setDisabled] = useState<Disabled>(true);
   const [subStatus, setSubStatus] = useState<SubStatus>('idle');
   const [errMessage, setErrMessage] = useState('');
 
   useEffect(() => {
-    console.log(formData);
+    console.log('check form data', formData, typeof formData.order);
+
     if (formData.order !== 'tshirt') {
-      Object.values(formData).includes('') || formData.order === 'undefined'
+      Object.values(formData).includes('') || formData.order === undefined
         ? setDisabled(true)
         : setDisabled(false);
     } else {
-      Object.values(formData).includes('') || formData.order === 'undefined'
+      Object.values(formData).includes('') || formData.order === undefined
         ? setDisabled(true)
         : setDisabled(false);
     }
   }, [formData, disabled]);
 
-  const handleClick = async (event) => {
+  const handleClick = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setSubStatus('pending');
 
@@ -49,13 +50,14 @@ function App() {
       });
   };
 
-  const handleChange = (value, name) => {
+  const handleChange = (value: string | undefined, name: string) => {
+    console.log(typeof value, name);
     setFormData({ ...formData, [name]: value });
     setErrMessage('');
   };
 
   return (
-    <div>
+    <div className='bg-gray-100 rounded-lg shadow-lx w-96 mt-20 pb-14'>
       {subStatus !== 'confirmed' ? (
         <>
           <ProductImg image={formData.order} />

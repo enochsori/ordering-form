@@ -1,9 +1,16 @@
-type ImageProp = {
-  image: string;
+import { imageFiles } from '../settings';
+import { Order } from '../types/type';
+
+type Prop = {
+  image: Order;
 };
 
-export default function ProductImg({ image }: ImageProp) {
+export default function ProductImg({ image }: Prop) {
   return (
-    <img src={`images/${image}`} alt='image' className='w-full h-[220px]' />
+    <img
+      src={`images/${imageFiles[image]}`}
+      alt=''
+      className='h-[220px] w-full overflow-hidden object-cover rounded-md'
+    />
   );
 }

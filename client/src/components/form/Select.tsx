@@ -16,7 +16,7 @@ export default function Select({
   options,
 }: Props) {
   return (
-    <div className='my-4'>
+    <div className='mb-2 last:mb-4'>
       <label htmlFor={htmlFor} className='hidden'>
         {label}
       </label>

@@ -10,7 +10,7 @@ type FormProps = {
   disabled: Disabled;
   subStatus: SubStatus;
   handleChange: (value: string, name: string) => void;
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick: () => void;
 };
 
 export default function Form({
@@ -42,7 +42,7 @@ export default function Form({
       </div>
 
       <div className='mb-4'>
-        <h1 className='font-bold'>Order Form</h1>
+        <h1 className='font-bold text-center'>Order Form</h1>
         <h2>Provide your information</h2>
         <div className='flex justify-between w-full'>
           <Input
@@ -60,7 +60,7 @@ export default function Form({
         </div>
         <Input
           name='email'
-          type='text'
+          type='email'
           placeholder='Email'
           handleChange={handleChange}
         />
@@ -101,7 +101,6 @@ export default function Form({
         </div>
       </div>
       <Button
-        formData={formData}
         handleClick={handleClick}
         disabled={disabled}
         subStatus={subStatus}

@@ -1,5 +1,5 @@
 export type ItemOptions = {
-  value: string | undefined;
+  value: string | 'undefined';
   label: string;
 };
 
@@ -11,7 +11,7 @@ export type ImageFiles = {
 };
 
 export type Order = 'bottle' | 'socks' | 'tshirt' | 'undefined';
-export type Size = 'small' | 'medium' | 'large' | 'xlarge' | undefined;
+export type Size = 'small' | 'medium' | 'large' | 'xlarge' | 'undefined';
 
 export type FormData = {
   order: Order;

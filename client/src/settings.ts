@@ -23,8 +23,8 @@ export const imageFiles: ImageFiles = {
 };
 
 export const initialState: FormData = {
-  order: undefined,
-  size: undefined,
+  order: 'undefined',
+  size: 'undefined',
   firstName: '',
   lastName: '',
   email: '',

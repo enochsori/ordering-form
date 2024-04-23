@@ -1,7 +1,7 @@
-import { InitialState } from '../types/type';
+import { FormData } from '../types/type';
 
 type MsgProps = {
-  formData: InitialState;
+  formData: FormData;
 };
 
 export default function ConfirmationsMsg({

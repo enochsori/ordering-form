@@ -1,7 +1,6 @@
 import { useEffect, useState, MouseEvent } from 'react';
 import { errorMessages, initialState } from './settings';
 import { Disabled, FormData, SubStatus } from './types/type';
-import ProductImg from './components/ProductImg';
 import ErrorMsg from './components/ErrorMsg';
 import Form from './components/form/Form';
 import ConfirmationsMsg from './components/ConfirmationsMsg';
@@ -13,14 +12,12 @@ function App() {
   const [errMessage, setErrMessage] = useState('');
 
   useEffect(() => {
-    console.log('check form data', formData, typeof formData.order);
-
     if (formData.order !== 'tshirt') {
-      Object.values(formData).includes('') || formData.order === undefined
+      Object.values(formData).includes('') || formData.order === 'undefined'
         ? setDisabled(true)
         : setDisabled(false);
     } else {
-      Object.values(formData).includes('') || formData.order === undefined
+      Object.values(formData).includes('') || formData.size === 'undefined'
         ? setDisabled(true)
         : setDisabled(false);
     }
@@ -30,7 +27,7 @@ function App() {
     event.preventDefault();
     setSubStatus('pending');
 
-    fetch('/order', {
+    fetch('http://localhost:8000/order', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
@@ -51,16 +48,14 @@ function App() {
   };
 
   const handleChange = (value: string | undefined, name: string) => {
-    console.log(typeof value, name);
     setFormData({ ...formData, [name]: value });
     setErrMessage('');
   };
 
   return (
-    <div className='bg-gray-100 rounded-lg shadow-lx w-96 mt-20 pb-14'>
+    <div className='bg-gray-100 rounded-lg shadow-lx w-96 mt-20 py-4'>
       {subStatus !== 'confirmed' ? (
         <>
-          <ProductImg image={formData.order} />
           <Form
             formData={formData}
             handleChange={handleChange}

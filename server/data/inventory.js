@@ -11,8 +11,8 @@ const stock = {
 
 const customers = [
   {
-    givenName: 'Rick',
-    surname: 'Sanchez',
+    firstName: 'Rick',
+    lastName: 'Sanchez',
     email: 'rick@sanchez.com',
     address: '123 Main Street',
     city: 'Montreal',
@@ -21,8 +21,8 @@ const customers = [
     country: 'Canada',
   },
   {
-    givenName: 'John',
-    surname: 'Doe',
+    firstName: 'John',
+    lastName: 'Doe',
     email: 'some@amnesia.net',
     address: '932 Avenue Unknown',
     city: 'Vancouver',

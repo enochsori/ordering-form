@@ -44,7 +44,7 @@ export default function Form({
       <div className='mb-4'>
         <h1 className='font-bold text-center'>Order Form</h1>
         <h2>Provide your information</h2>
-        <div className='flex justify-between w-full'>
+        <div className='flex gap-1 justify-between w-full'>
           <Input
             name='firstName'
             type='text'

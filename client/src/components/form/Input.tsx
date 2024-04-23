@@ -1,4 +1,16 @@
-export default function Input({ name, type, placeholder, handleChange }) {
+type Props = {
+  name: string;
+  type: string;
+  placeholder: string;
+  handleChange: (value: string, name: string) => void;
+};
+
+export default function Input({
+  name,
+  type,
+  placeholder,
+  handleChange,
+}: Props) {
   return (
     <div className='mb-1.5 w-full relative'>
       <label htmlFor={name} className='hidden'>

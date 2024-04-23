@@ -47,6 +47,15 @@ function App() {
       });
   };
 
+  useEffect(() => {
+    if (subStatus === 'confirmed') {
+      setTimeout(() => {
+        setSubStatus('idle');
+        setFormData(initialState);
+      }, 5000);
+    }
+  }, [subStatus]);
+
   const handleChange = (value: string | undefined, name: string) => {
     setFormData({ ...formData, [name]: value });
     setErrMessage('');

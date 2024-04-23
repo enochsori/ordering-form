@@ -26,7 +26,7 @@ Use `npm run dev:backend` to start the backend dev environment.
 
 ## ⚡ Exercises
 
-![order-form](client\public\images\order-form.png)
+![order-form](./order-form.png)
 
 #### Validation
 

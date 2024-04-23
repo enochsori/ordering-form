@@ -1,6 +1,6 @@
-# React client, Node server
+# simple ordering form
 
-## 🦊 simple ordering form
+## 🦊 Client - React JS, Server - node JS
 
 ---
 
@@ -37,7 +37,6 @@ Use `npm run dev:backend` to start the backend dev environment.
    - whose address matches an address already in our database. Use only the street number and name for this.
 
 2. Validate that the data received is _valid_ as much as is possible.
-   - Is the email, an email? Does it include `@`? _(No need to go crazy here. Just a cursory evaluation.)_
 3. Validate that delivery address is within Canada. We only ship to Canada!
 4. Validate that the item selected is actually in stock.
 
